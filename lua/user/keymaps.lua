@@ -30,7 +30,7 @@ keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Create buffers
 keymap("n", "<leader>sp", ":split<CR>", opts)
-keymap("n", "<leader>vs", ":vsplit<CR>", opts)
+keymap("n", "<leader>vs", ":vsplit", opts)
 
 
 -- Resize buffers/splits
@@ -40,13 +40,13 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<C-L>", ":bnext<CR>", opts)
-keymap("n", "<C-H>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<cr>", opts)
 
--- Insert mode
+-- insert mode
 
--- kk to go to Normal
-keymap("i", "kk", "<ESC>", opts)
+-- kk to go to normal
+keymap("i", "kk", "<esc>", opts)
 
 -- Visual mode
 
@@ -55,8 +55,8 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<C-J>", ":m .+1<CR>==", opts)
-keymap("v", "<C-K>", ":m .-2<CR>==", opts)
+keymap("v", "<A-j>", ":m .+1<CR>==", opts)
+keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block
@@ -64,8 +64,8 @@ keymap("v", "p", '"_dP', opts)
 -- Move block up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<C-J>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<C-R>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal mode
 -- Terminal Navigation
