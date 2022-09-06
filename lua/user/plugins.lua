@@ -52,6 +52,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline"
   use "saadparwaiz1/cmp_luasnip"
   use "hrsh7th/cmp-nvim-lsp"
+  use "windwp/nvim-autopairs"
+  use "numToStr/Comment.nvim"
 
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
@@ -75,6 +77,8 @@ return packer.startup(function(use)
   }
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
