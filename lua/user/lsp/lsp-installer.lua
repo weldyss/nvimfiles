@@ -23,7 +23,12 @@ lsp_installer.on_server_ready(function(server)
     local pyright_opts = require("user.lsp.settings.pyright_lua")
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
-  
+
+  if server.name == "elixirls" then
+    local elixir_opts = require("user.lsp.settings.elixir")
+    opts = vim.tbl_deep_extend("force", elixir_opts, opts)
+  end
+
   server:setup(opts)
 
 end)

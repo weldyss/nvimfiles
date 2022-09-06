@@ -57,14 +57,24 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets"
 
   use "David-Kunz/cmp-npm"
-  
+
   -- LSP installations
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
 
+  use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }})
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
+  use "nvim-telescope/telescope-media-files.nvim"
+  
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate"
+  }
+  use "p00f/nvim-ts-rainbow"
+  use "nvim-treesitter/playground"
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

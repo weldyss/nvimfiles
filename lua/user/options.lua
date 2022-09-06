@@ -9,7 +9,7 @@ local options = {
   hlsearch = true,
   ignorecase = true,
   mouse = "a",
-  termguicolors = false,
+  termguicolors = true,
   pumheight = 10,
   showmode = false,
   showtabline = 2,
@@ -31,7 +31,8 @@ local options = {
   wrap = false,
   scrolloff = 8,
   signcolumn = "yes",
-  sidescrolloff = 8
+  sidescrolloff = 8,
+  listchars = "nbsp:☠,tab:▸␣"
 }
 
 vim.opt.shortmess:append "c"

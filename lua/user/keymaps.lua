@@ -30,7 +30,7 @@ keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Create buffers
 keymap("n", "<leader>sp", ":split<CR>", opts)
-keymap("n", "<leader>vs", ":vsplit", opts)
+keymap("n", "<leader>vs", ":vsplit<CR>", opts)
 
 
 -- Resize buffers/splits
@@ -76,4 +76,4 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- keymap ("n" "<leader>f", <cmd>Telescope find_files<cr>, opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>p", "<cmd>Telescope live_grep<cr>", opts)
