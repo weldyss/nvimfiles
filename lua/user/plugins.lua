@@ -54,9 +54,12 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
-
+  use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-tree.lua"
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
 
   use "David-Kunz/cmp-npm"
 
