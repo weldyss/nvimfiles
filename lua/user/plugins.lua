@@ -60,6 +60,7 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
+  use "akinsho/toggleterm.nvim"
 
   use "David-Kunz/cmp-npm"
 
@@ -85,7 +86,6 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
