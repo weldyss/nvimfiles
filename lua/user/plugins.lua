@@ -63,6 +63,7 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
 
   use "David-Kunz/cmp-npm"
+  use ({'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }})
 
   -- LSP installations
   use "neovim/nvim-lspconfig"
