@@ -64,6 +64,9 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+-- Clear highlighted search
+keymap("n", "<CR>", ":nohlsearch<CR>", opts)
+
 -- insert mode
 
 -- kk to go to normal
