@@ -100,7 +100,7 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- ToggleTerminal Keymappings
 keymap("n", "<C-g>", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-keymap("n", "<C-R>", "<cmd>lua _RUBY_TOGGLE()<CR>", opts)
+keymap("n", "<A-r>", "<cmd>lua _RUBY_TOGGLE()<CR>", opts)
 
 -- keymap ("n" "<leader>f", <cmd>Telescope find_files<cr>, opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
