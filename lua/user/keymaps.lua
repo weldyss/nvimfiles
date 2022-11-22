@@ -33,7 +33,7 @@ keymap("n", "<S-h>", ":bprevious<cr>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 --
 -- Re-order to previous/next
-keymap("n", "<A-<>", ":BufferLineMovePrevious<CR>", opts)
+keymap("n", "<A-<>", ":BufferLineMovePrev<CR>", opts)
 keymap("n", "<A->>", ":BufferLineMoveNext<CR>", opts)
 --
 -- Goto buffer in position...
