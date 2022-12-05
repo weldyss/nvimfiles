@@ -92,7 +92,8 @@ return packer.startup(function(use)
   -- Telekasten to take notes
   use "renerocksai/telekasten.nvim"
   use "renerocksai/calendar-vim"
-  
+  use "ellisonleao/glow.nvim"
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

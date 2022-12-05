@@ -32,7 +32,8 @@ local options = {
   scrolloff = 8,
   signcolumn = "yes",
   sidescrolloff = 8,
-  listchars = "nbsp:☠,tab:▸␣"
+  listchars = "nbsp:☠,tab:▸␣,eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣",
+  list = true
 }
 
 vim.opt.shortmess:append "c"

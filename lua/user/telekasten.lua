@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-local home = vim.fn.expand("/mnt/c/Users/Weldys Santos/.notable/notes")
+local home = vim.fn.expand("/Users/weldyss/Documents/Notes/notes")
 
 telekasten.setup {
    home = home,
@@ -132,6 +132,7 @@ telekasten.setup {
 
     vaults = {
         vault2 = {
+          home = "/mnt/c/Users/Weldys Santos/.notable/notes"
             -- alternate configuration for vault2 here. Missing values are defaulted to
             -- default values from telekasten.
             -- e.g.
