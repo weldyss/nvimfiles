@@ -57,6 +57,8 @@ keymap('n', '<A-c>', ':BufferLinePickClose<CR>', opts)
 keymap("n", "<leader>sp", ":split<CR>", opts)
 keymap("n", "<leader>vs", ":vsplit<CR>", opts)
 
+-- Telekasten
+keymap("n", "<C-n>", ':Telekasten<CR>', opts)
 
 -- Resize buffers/splits
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)

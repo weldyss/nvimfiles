@@ -28,11 +28,11 @@ local options = {
   number = true,
   relativenumber = false,
   numberwidth = 4,
-  wrap = false,
+  wrap = true,
   scrolloff = 8,
   signcolumn = "yes",
   sidescrolloff = 8,
-  listchars = "nbsp:☠,tab:▸␣,eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣",
+  listchars = "nbsp:☠,tab:▸␣,eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:•",
   list = true
 }
 
