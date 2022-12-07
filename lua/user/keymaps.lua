@@ -20,6 +20,9 @@ vim.g.maplocalleader = ","
 
 -- Normal mode
 
+-- Yanking current file path
+keymap("n", "<A-y>", ":let @*=expand(\"%\")<CR>", opts)
+
 -- Window Navigation
 keymap("n", "<C-h>", "C-w>h", opts)
 keymap("n", "<C-j>", "C-w>j", opts)
