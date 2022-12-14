@@ -143,5 +143,5 @@ telekasten.setup {
     -- how to preview media files
     -- "telescope-media-files" if you have telescope-media-files.nvim installed
     -- "catimg-previewer" if you have catimg installed
-    media_previewer = "telescope-media-files",
+    media_previewer = "catimg-previewer",
 }
