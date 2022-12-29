@@ -19,3 +19,5 @@ require "user.telekasten"
 require "user.nvim-ufo"
 require "user.lazygit"
 require "user.illuminate"
+
+vim.cmd('source ./vimscript/markdown-preview.vim')
