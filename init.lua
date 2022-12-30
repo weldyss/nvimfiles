@@ -20,4 +20,4 @@ require "user.nvim-ufo"
 require "user.lazygit"
 require "user.illuminate"
 
-vim.cmd('source ./vimscript/markdown-preview.vim')
+vim.cmd('source ~/.config/nvim/vimscript/markdown-preview.vim')
