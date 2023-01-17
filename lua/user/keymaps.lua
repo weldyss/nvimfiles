@@ -61,7 +61,8 @@ keymap("n", "<leader>sp", ":split<CR>", opts)
 keymap("n", "<leader>vs", ":vsplit<CR>", opts)
 
 -- Telekasten
-keymap("n", "<C-n>", ':Telekasten<CR>', opts)
+keymap("n", "<C-n>", ':ObsidianNew<CR>', opts)
+keymap("n", "<leader>nd", ':ObsidianToday<CR>', opts)
 
 -- Resize buffers/splits
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)

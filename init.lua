@@ -15,9 +15,9 @@ require "user.bufferline"
 require "user.toggleterm"
 require "user.lualine"
 require "user.glow"
-require "user.telekasten"
 require "user.nvim-ufo"
 require "user.lazygit"
 require "user.illuminate"
+require "user.obsidian"
 
 vim.cmd('source ~/.config/nvim/vimscript/markdown-preview.vim')

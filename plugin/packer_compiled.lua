@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  ["calendar-vim"] = {
-    loaded = true,
-    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/calendar-vim",
-    url = "https://github.com/renerocksai/calendar-vim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -216,6 +211,11 @@ _G.packer_plugins = {
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["obsidian.nvim"] = {
+    loaded = true,
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
+    url = "https://github.com/epwalsh/obsidian.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -241,10 +241,10 @@ _G.packer_plugins = {
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/promise-async",
     url = "https://github.com/kevinhwang91/promise-async"
   },
-  ["telekasten.nvim"] = {
+  tabular = {
     loaded = true,
-    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/telekasten.nvim",
-    url = "https://github.com/renerocksai/telekasten.nvim"
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/tabular",
+    url = "https://github.com/godlygeek/tabular"
   },
   ["telescope-media-files.nvim"] = {
     loaded = true,
@@ -275,6 +275,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-markdown"] = {
+    loaded = true,
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/vim-markdown",
+    url = "https://github.com/preservim/vim-markdown"
   }
 }
 

@@ -93,9 +93,12 @@ return packer.startup(function(use)
   use "kdheepak/lazygit.nvim"
   use "lewis6991/gitsigns.nvim"
 
-  -- Telekasten to take notes
-  use "renerocksai/telekasten.nvim"
-  use "renerocksai/calendar-vim"
+  -- Obsidian plugins
+  use "preservim/vim-markdown"
+  use "godlygeek/tabular"
+
+  use 'epwalsh/obsidian.nvim'
+
   use "ellisonleao/glow.nvim"
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
