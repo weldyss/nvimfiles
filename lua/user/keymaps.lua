@@ -60,7 +60,7 @@ keymap('n', '<A-c>', ':BufferLinePickClose<CR>', opts)
 keymap("n", "<leader>sp", ":split<CR>", opts)
 keymap("n", "<leader>vs", ":vsplit<CR>", opts)
 
--- Telekasten
+-- Obsidian
 keymap("n", "<C-n>", ':ObsidianNew<CR>', opts)
 keymap("n", "<leader>nd", ':ObsidianToday<CR>', opts)
 
@@ -69,6 +69,12 @@ keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+-- Folding
+keymap("n", "zR", "require('ufo').openAllFolds", opts)
+keymap("n", "zM", "require('ufo').closeAllFolds", opts)
+keymap("n", "zr", "require('ufo').openFoldsExceptKinds", opts)
+keymap("n", "zm", "require('ufo').closeFoldsWith", opts) -- closeAllFolds == closeFoldsWith(0)
 
 -- Clear highlighted search
 keymap("n", "<CR>", ":nohlsearch<CR>", opts)
