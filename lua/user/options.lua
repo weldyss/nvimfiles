@@ -9,6 +9,7 @@ local options = {
   hlsearch = true,
   ignorecase = true,
   mouse = "a",
+  mousemodel="popup",
   termguicolors = true,
   pumheight = 10,
   showmode = false,
