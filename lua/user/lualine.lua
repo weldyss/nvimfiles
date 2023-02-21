@@ -26,10 +26,10 @@ lualine.setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_c = { {'filename', file_status = true, path = 1}},
+    lualine_x = {'fileformat', 'filetype', 'location'},
     lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_z = {"os.date('<%H:%M>')"}
   },
   inactive_sections = {
     lualine_a = {},
