@@ -72,6 +72,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer"
   use "jose-elias-alvarez/null-ls.nvim"
 
+  use('MunifTanjim/prettier.nvim')
   use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }})
 
   -- Telescope
