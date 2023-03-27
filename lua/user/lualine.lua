@@ -28,8 +28,8 @@ lualine.setup {
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = { {'filename', file_status = true, path = 1}},
     lualine_x = {'fileformat', 'filetype', 'location'},
-    lualine_y = {'progress'},
-    lualine_z = {"os.date('<%H:%M>')"}
+    lualine_y = {},
+    lualine_z = {}
   },
   inactive_sections = {
     lualine_a = {},
