@@ -34,7 +34,11 @@ local options = {
   signcolumn = "yes",
   sidescrolloff = 8,
   listchars = "nbsp:☠,tab:▸␣,eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:•",
-  list = true
+  list = true,
+  foldcolumn = "1",
+  foldlevel = 99,
+  foldlevelstart = -1,
+  foldenable = true
 }
 
 vim.opt.shortmess:append "c"

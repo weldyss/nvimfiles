@@ -63,15 +63,21 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "akinsho/toggleterm.nvim"
-  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
-
+  use {
+    "kevinhwang91/nvim-ufo",
+    opt = true,
+    event = { "BufReadPre" },
+    wants = { "promise-async" },
+    requires = "kevinhwang91/promise-async"
+  }
+  use{"folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons"}
   use "David-Kunz/cmp-npm"
   use ({'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }})
 
   -- LSP installations
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
-  use "jose-elias-alvarez/null-ls.nvim"
+  use({"jose-elias-alvarez/null-ls.nvim", requires = { {'nvim-lua/plenary.nvim'}, {'semanticart/ruby-code-actions.nvim'}}})
 
   use('MunifTanjim/prettier.nvim')
   use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }})

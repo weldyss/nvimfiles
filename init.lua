@@ -19,5 +19,4 @@ require "user.lazygit"
 require "user.illuminate"
 require "user.auto-tag"
 require "user.obsidian"
-
-vim.cmd('source ~/.config/nvim/vimscript/markdown-preview.vim')
+require "user.trouble"

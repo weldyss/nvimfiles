@@ -212,9 +212,13 @@ _G.packer_plugins = {
     url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-ufo"] = {
-    loaded = true,
-    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/nvim-ufo",
-    url = "https://github.com/kevinhwang91/nvim-ufo"
+    after = { "promise-async" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/opt/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo",
+    wants = { "promise-async" }
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -252,9 +256,18 @@ _G.packer_plugins = {
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
   ["promise-async"] = {
-    loaded = true,
-    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/promise-async",
+    load_after = {
+      ["nvim-ufo"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/opt/promise-async",
     url = "https://github.com/kevinhwang91/promise-async"
+  },
+  ["ruby-code-actions.nvim"] = {
+    loaded = true,
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/ruby-code-actions.nvim",
+    url = "https://github.com/semanticart/ruby-code-actions.nvim"
   },
   tabular = {
     loaded = true,
@@ -280,6 +293,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   ["vim-bbye"] = {
     loaded = true,
@@ -309,6 +327,10 @@ vim.cmd [[au!]]
 time([[Defining lazy-load filetype autocommands]], true)
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-ufo'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
