@@ -61,6 +61,7 @@ return packer.startup(function(use)
   use "windwp/nvim-ts-autotag"
   use "rafamadriz/friendly-snippets"
   use "akinsho/bufferline.nvim"
+  use "tiagovla/scope.nvim"
   use "moll/vim-bbye"
   use "akinsho/toggleterm.nvim"
   use {

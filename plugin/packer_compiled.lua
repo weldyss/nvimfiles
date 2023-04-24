@@ -269,6 +269,11 @@ _G.packer_plugins = {
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/ruby-code-actions.nvim",
     url = "https://github.com/semanticart/ruby-code-actions.nvim"
   },
+  ["scope.nvim"] = {
+    loaded = true,
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/scope.nvim",
+    url = "https://github.com/tiagovla/scope.nvim"
+  },
   tabular = {
     loaded = true,
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/tabular",
