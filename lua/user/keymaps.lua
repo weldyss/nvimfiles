@@ -60,10 +60,6 @@ keymap('n', '<A-c>', ':BufferLinePickClose<CR>', opts)
 keymap("n", "<leader>sp", ":split<CR>", opts)
 keymap("n", "<leader>vs", ":vsplit<CR>", opts)
 
--- Obsidian
-keymap("n", "<C-n>", ':ObsidianNew<CR>', opts)
-keymap("n", "<leader>nd", ':ObsidianToday<CR>', opts)
-
 -- Resize buffers/splits
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -71,10 +67,10 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Folding
-keymap("n", "zR", "require('ufo').openAllFolds", opts)
-keymap("n", "zM", "require('ufo').closeAllFolds", opts)
-keymap("n", "zr", "require('ufo').openFoldsExceptKinds", opts)
-keymap("n", "zm", "require('ufo').closeFoldsWith", opts) -- closeAllFolds == closeFoldsWith(0)
+keymap("n", "zR", "<cmd> lua require('ufo').openAllFolds<CR>", opts)
+keymap("n", "zM", "<cmd> lua require('ufo').closeAllFolds<CR>", opts)
+keymap("n", "zr", "<cmd> lua require('ufo').openFoldsExceptKinds<CR>", opts)
+keymap("n", "zm", "<cmd> lua require('ufo').closeFoldsWith<CR>", opts) -- closeAllFolds == closeFoldsWith(0)
 
 -- Clear highlighted search
 keymap("n", "<CR>", ":nohlsearch<CR>", opts)

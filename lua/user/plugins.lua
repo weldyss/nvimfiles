@@ -86,6 +86,7 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
+  use "nvim-telescope/telescope-symbols.nvim"
 
   -- Highlight words
   use "RRethy/vim-illuminate"
@@ -102,14 +103,31 @@ return packer.startup(function(use)
   use "kdheepak/lazygit.nvim"
   use "lewis6991/gitsigns.nvim"
 
-  -- Obsidian plugins
-  use "preservim/vim-markdown"
-  use "godlygeek/tabular"
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end
+  }
 
-  use 'epwalsh/obsidian.nvim'
+  use {
+    "pwntester/octo.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-tree/nvim-web-devicons",
+    }
+  }
 
+  -- Markdown plugins
+  use {
+    'renerocksai/telekasten.nvim',
+    requires = {'nvim-telescope/telescope.nvim'}
+  }
   use "ellisonleao/glow.nvim"
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use "renerocksai/calendar-vim"
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
