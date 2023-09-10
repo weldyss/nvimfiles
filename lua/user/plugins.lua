@@ -54,8 +54,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
   use "L3MON4D3/LuaSnip"
   use "onsails/lspkind-nvim"
   use "windwp/nvim-ts-autotag"
@@ -74,6 +72,17 @@ return packer.startup(function(use)
   use{"folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons"}
   use "David-Kunz/cmp-npm"
   use ({'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }})
+
+  -- Tree
+  use {
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    }
+  }
 
   -- LSP installations
   use "neovim/nvim-lspconfig"
@@ -111,6 +120,28 @@ return packer.startup(function(use)
     end
   }
 
+  use({
+    "lmburns/lf.nvim",
+    config = function()
+      -- This feature will not work if the plugin is lazy-loaded
+      vim.g.lf_netrw = 1
+
+      require("lf").setup({
+        escape_quit = false,
+        border = "rounded",
+      })
+
+      vim.api.nvim_create_autocmd({
+        event = "User",
+        pattern = "LfTermEnter",
+        callback = function(a)
+          vim.api.nvim_buf_set_keymap(a.buf, "t", "q", "q", {nowait = true})
+        end,
+      })
+    end,
+    requires = {"toggleterm.nvim"}
+  })
+
   use {
     "pwntester/octo.nvim",
     requires = {
@@ -121,10 +152,7 @@ return packer.startup(function(use)
   }
 
   -- Markdown plugins
-  use {
-    'renerocksai/telekasten.nvim',
-    requires = {'nvim-telescope/telescope.nvim'}
-  }
+  use({ "epwalsh/obsidian.nvim", requires = { "nvim-lua/plenary.nvim" } })
   use "ellisonleao/glow.nvim"
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
   use "renerocksai/calendar-vim"
