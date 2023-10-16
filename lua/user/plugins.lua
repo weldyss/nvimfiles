@@ -131,13 +131,8 @@ return packer.startup(function(use)
         border = "rounded",
       })
 
-      vim.api.nvim_create_autocmd({
-        event = "User",
-        pattern = "LfTermEnter",
-        callback = function(a)
-          vim.api.nvim_buf_set_keymap(a.buf, "t", "q", "q", {nowait = true})
-        end,
-      })
+      vim.keymap.set("n", "<M-o>", "<Cmd>Lf<CR>")
+
     end,
     requires = {"toggleterm.nvim"}
   })

@@ -149,6 +149,12 @@ _G.packer_plugins = {
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
+  ["lf.nvim"] = {
+    config = { "\27LJ\2\n­\1\0\0\5\0\f\0\0186\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\6\0B\0\2\0016\0\0\0009\0\a\0009\0\b\0'\2\t\0'\3\n\0'\4\v\0B\0\4\1K\0\1\0\16<Cmd>Lf<CR>\n<M-o>\6n\bset\vkeymap\1\0\2\16escape_quit\1\vborder\frounded\nsetup\alf\frequire\rlf_netrw\6g\bvim\0" },
+    loaded = true,
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/lf.nvim",
+    url = "https://github.com/lmburns/lf.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -165,6 +171,16 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
+  ["neo-tree.nvim"] = {
+    loaded = true,
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -190,11 +206,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -228,7 +239,12 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["obsidian.nvim"] = {
+    loaded = true,
+    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
+    url = "https://github.com/epwalsh/obsidian.nvim"
   },
   ["octo.nvim"] = {
     loaded = true,
@@ -278,11 +294,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/scope.nvim",
     url = "https://github.com/tiagovla/scope.nvim"
-  },
-  ["telekasten.nvim"] = {
-    loaded = true,
-    path = "/Users/weldyss/.local/share/nvim/site/pack/packer/start/telekasten.nvim",
-    url = "https://github.com/renerocksai/telekasten.nvim"
   },
   ["telescope-media-files.nvim"] = {
     loaded = true,
@@ -337,6 +348,10 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
+-- Config for: lf.nvim
+time([[Config for lf.nvim]], true)
+try_loadstring("\27LJ\2\n­\1\0\0\5\0\f\0\0186\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\6\0B\0\2\0016\0\0\0009\0\a\0009\0\b\0'\2\t\0'\3\n\0'\4\v\0B\0\4\1K\0\1\0\16<Cmd>Lf<CR>\n<M-o>\6n\bset\vkeymap\1\0\2\16escape_quit\1\vborder\frounded\nsetup\alf\frequire\rlf_netrw\6g\bvim\0", "config", "lf.nvim")
+time([[Config for lf.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\nD\0\0\2\0\4\0\t6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0K\0\1\0\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")

@@ -29,7 +29,12 @@ keymap("n", "<C-j>", "C-w>j", opts)
 keymap("n", "<C-k>", "C-w>k", opts)
 keymap("n", "<C-l>", "C-w>l", opts)
 
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<C-o>", "<Cmd>lua require('lf').start()<CR>", opts)
+
+keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
+keymap("n", "<leader>g", ":Neotree float git_status<cr>", opts)
+keymap("n", "<leader>bf", ":Neotree right buffers<cr>", opts)
+keymap("n", "<leader>ff", "<cmd>Lf<cr>",opts)
 
 -- Buffer navigations
 keymap("n", "<S-h>", ":bprevious<cr>", opts)
@@ -60,6 +65,10 @@ keymap('n', '<A-c>', ':BufferLinePickClose<CR>', opts)
 keymap("n", "<leader>sp", ":split<CR>", opts)
 keymap("n", "<leader>vs", ":vsplit<CR>", opts)
 
+-- Obsidian
+keymap("n", "<C-n>", ':ObsidianNew<CR>', opts)
+keymap("n", "<leader>nd", ':ObsidianToday<CR>', opts)
+
 -- Resize buffers/splits
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -67,10 +76,10 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Folding
-keymap("n", "zR", "<cmd> lua require('ufo').openAllFolds<CR>", opts)
-keymap("n", "zM", "<cmd> lua require('ufo').closeAllFolds<CR>", opts)
-keymap("n", "zr", "<cmd> lua require('ufo').openFoldsExceptKinds<CR>", opts)
-keymap("n", "zm", "<cmd> lua require('ufo').closeFoldsWith<CR>", opts) -- closeAllFolds == closeFoldsWith(0)
+keymap("n", "zz", "<cmd> lua require('ufo').openAllFolds<CR>", opts)
+keymap("n", "ZZ", "<cmd> lua require('ufo').closeAllFolds<CR>", opts)
+keymap("n", "zm", "<cmd> lua require('ufo').openFoldsExceptKinds<CR>", opts)
+keymap("n", "ZM", "<cmd> lua require('ufo').closeFoldsWith<CR>", opts) -- closeAllFolds == closeFoldsWith(0)
 
 -- Clear highlighted search
 keymap("n", "<CR>", ":nohlsearch<CR>", opts)
