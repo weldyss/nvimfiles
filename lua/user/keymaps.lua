@@ -65,10 +65,6 @@ keymap('n', '<A-c>', ':BufferLinePickClose<CR>', opts)
 keymap("n", "<leader>sp", ":split<CR>", opts)
 keymap("n", "<leader>vs", ":vsplit<CR>", opts)
 
--- Obsidian
-keymap("n", "<C-n>", ':ObsidianNew<CR>', opts)
-keymap("n", "<leader>nd", ':ObsidianToday<CR>', opts)
-
 -- Resize buffers/splits
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -122,3 +118,4 @@ keymap("n", "<A-r>", "<cmd>lua _RUBY_TOGGLE()<CR>", opts)
 -- keymap ("n" "<leader>f", <cmd>Telescope find_files<cr>, opts)
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>p", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>o", "<cmd>Telescope buffers<cr>", opts)
