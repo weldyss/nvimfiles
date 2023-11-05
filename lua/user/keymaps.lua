@@ -19,6 +19,7 @@ vim.g.maplocalleader = ","
 --      command      = "c"
 
 -- Normal mode
+keymap("n", "<esc>", "<Nop>", opts)
 
 -- Yanking current file path
 keymap("n", "<A-y>", ":let @*=expand(\"%\")<CR>", opts)
@@ -29,12 +30,15 @@ keymap("n", "<C-j>", "C-w>j", opts)
 keymap("n", "<C-k>", "C-w>k", opts)
 keymap("n", "<C-l>", "C-w>l", opts)
 
-keymap("n", "<C-o>", "<Cmd>lua require('lf').start()<CR>", opts)
-
 keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
 keymap("n", "<leader>g", ":Neotree float git_status<cr>", opts)
 keymap("n", "<leader>bf", ":Neotree right buffers<cr>", opts)
 keymap("n", "<leader>ff", "<cmd>Lf<cr>",opts)
+
+-- Tab Navigation
+keymap("n", "<C-t>", ":tabnew<cr>", opts)
+keymap("n", "<C-[>", ":tabprevious<cr>", opts)
+keymap("n", "<C-]>", ":tabnext<cr>", opts)
 
 -- Buffer navigations
 keymap("n", "<S-h>", ":bprevious<cr>", opts)
@@ -54,10 +58,10 @@ keymap("n", '<A-6>', ":BufferLineGoToBuffer 6<CR>", opts)
 keymap("n", '<A-7>', ":BufferLineGoToBuffer 7<CR>", opts)
 keymap("n", '<A-8>', ":BufferLineGoToBuffer 8<CR>", opts)
 keymap("n", '<A-9>', ":BufferLineGoToBuffer 9<CR>", opts)
---
+
 -- Pin/unpin buffer
 keymap('n', '<A-p>', ':BufferLineTogglePin<CR>', opts)
---
+
 -- Close buffer
 keymap('n', '<A-c>', ':BufferLinePickClose<CR>', opts)
 
@@ -70,12 +74,6 @@ keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
--- Folding
-keymap("n", "zz", "<cmd> lua require('ufo').openAllFolds<CR>", opts)
-keymap("n", "ZZ", "<cmd> lua require('ufo').closeAllFolds<CR>", opts)
-keymap("n", "zm", "<cmd> lua require('ufo').openFoldsExceptKinds<CR>", opts)
-keymap("n", "ZM", "<cmd> lua require('ufo').closeFoldsWith<CR>", opts) -- closeAllFolds == closeFoldsWith(0)
 
 -- Clear highlighted search
 keymap("n", "<CR>", ":nohlsearch<CR>", opts)
@@ -97,7 +95,6 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block
---
 -- Move block up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
@@ -110,10 +107,6 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
--- ToggleTerminal Keymappings
-keymap("n", "<C-g>", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-keymap("n", "<A-r>", "<cmd>lua _RUBY_TOGGLE()<CR>", opts)
 
 -- keymap ("n" "<leader>f", <cmd>Telescope find_files<cr>, opts)
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)

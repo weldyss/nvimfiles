@@ -62,13 +62,6 @@ return packer.startup(function(use)
   use "tiagovla/scope.nvim"
   use "moll/vim-bbye"
   use "akinsho/toggleterm.nvim"
-  use {
-    "kevinhwang91/nvim-ufo",
-    opt = true,
-    event = { "BufReadPre" },
-    wants = { "promise-async" },
-    requires = "kevinhwang91/promise-async"
-  }
   use{"folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons"}
   use "David-Kunz/cmp-npm"
   use ({'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }})
