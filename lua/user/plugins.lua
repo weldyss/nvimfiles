@@ -65,6 +65,7 @@ return packer.startup(function(use)
   use{"folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons"}
   use "David-Kunz/cmp-npm"
   use ({'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }})
+  use 'NvChad/nvim-colorizer.lua'
 
   -- Tree
   use {
