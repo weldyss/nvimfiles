@@ -36,6 +36,7 @@ keymap("n", "<leader>bf", ":Neotree right buffers<cr>", opts)
 keymap("n", "<leader>ff", "<cmd>Lf<cr>",opts)
 
 -- Tab Navigation
+keymap("n", "<C-T>", ":tabclose<cr>", opts)
 keymap("n", "<C-t>", ":tabnew<cr>", opts)
 keymap("n", "<C-[>", ":tabprevious<cr>", opts)
 keymap("n", "<C-]>", ":tabnext<cr>", opts)

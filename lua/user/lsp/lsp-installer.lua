@@ -33,7 +33,12 @@ lsp_installer.on_server_ready(function(server)
     local ts_opts = require("user.lsp.settings.tsserver")
     opts = vim.tbl_deep_extend("force", ts_opts, opts)
   end
-    
+
+  if server.name == "stimulus_lsp" then
+    local stimulus_opts = require("user.lsp.settings.stimulus_lsp")
+    opts = vim.tbl_deep_extend("force", stimulus_opts, opts)
+  end
+
   server:setup(opts)
 
 end)
