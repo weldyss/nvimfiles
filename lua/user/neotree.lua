@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 neotree.setup({
-  close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+  close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
   popup_border_style = "rounded",
   enable_git_status = true,
   enable_diagnostics = true,
@@ -71,7 +71,7 @@ neotree.setup({
     },
     -- If you don't want to use these columns, you can set `enabled = false` for each of them individually
     file_size = {
-      enabled = true,
+      enabled = false,
       required_width = 64, -- min width of window required to show this column
     },
     type = {
@@ -83,7 +83,7 @@ neotree.setup({
       required_width = 88, -- min width of window required to show this column
     },
     created = {
-      enabled = true,
+      enabled = false,
       required_width = 110, -- min width of window required to show this column
     },
     symlink_target = {
@@ -98,8 +98,8 @@ neotree.setup({
       nowait = true,
     },
     mappings = {
-      ["<space>"] = { 
-        "toggle_node", 
+      ["<space>"] = {
+        "toggle_node",
         nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
       },
       ["<2-LeftMouse>"] = "open",
@@ -120,7 +120,7 @@ neotree.setup({
       -- ['C'] = 'close_all_subnodes',
       ["z"] = "close_all_nodes",
       --["Z"] = "expand_all_nodes",
-      ["a"] = { 
+      ["a"] = {
         "add",
         -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
         -- some commands may take optional config options, see `:h neo-tree-mappings` for details

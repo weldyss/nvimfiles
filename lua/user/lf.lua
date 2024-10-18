@@ -41,7 +41,7 @@ lf.setup({
     {width = 0.500, height = 0.500, col = 0, row = 0.5},
     {width = 0.500, height = 0.500, col = 0.5, row = 0},
     {width = 0.500, height = 0.500, col = 0.5, row = 0.5},
-})
+}})
 
 
 

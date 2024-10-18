@@ -34,6 +34,7 @@ keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
 keymap("n", "<leader>g", ":Neotree float git_status<cr>", opts)
 keymap("n", "<leader>bf", ":Neotree right buffers<cr>", opts)
 keymap("n", "<leader>ff", "<cmd>Lf<cr>",opts)
+keymap("n", "<leader>fr", ":Neotree position=current dir=%:p:h:h reveal_file=%:p", opts)
 
 -- Tab Navigation
 keymap("n", "<C-T>", ":tabclose<cr>", opts)

@@ -66,6 +66,7 @@ return packer.startup(function(use)
   use "David-Kunz/cmp-npm"
   use ({'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }})
   use 'NvChad/nvim-colorizer.lua'
+  use 'Shopify/ruby-lsp'
 
   -- Tree
   use {
