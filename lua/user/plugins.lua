@@ -79,7 +79,7 @@ return packer.startup(function(use)
   }
 
   -- LSP installations
-  use "williamboman/mason.nvim"
+  use { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" }
 
   use('MunifTanjim/prettier.nvim')
   use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }})
