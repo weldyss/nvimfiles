@@ -15,7 +15,6 @@ local options = {
   autoindent = true,
   autoread = true,
   ruler = true,
-  ruler = true,
   showmode = false,
   showtabline = 2,
   smartcase = true,
