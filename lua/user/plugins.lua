@@ -46,12 +46,10 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
   use "folke/tokyonight.nvim"
-  use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-cmdline"
   use "saadparwaiz1/cmp_luasnip"
-  use "hrsh7th/cmp-nvim-lsp"
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
   use "L3MON4D3/LuaSnip"
@@ -71,12 +69,15 @@ return packer.startup(function(use)
   use {
   "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
-    requires = { 
+    requires = {
       "nvim-lua/plenary.nvim",
       "kyazdani42/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     }
   }
+
+  -- Searching files
+  use 'nvim-pack/nvim-spectre'
 
   -- LSP installations
   use "neovim/nvim-lspconfig"
@@ -85,7 +86,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
-  use "neovim/nvim-lspconfig"
 
   use('MunifTanjim/prettier.nvim')
   use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }})

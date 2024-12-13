@@ -1,7 +1,6 @@
 -- got from :help options
 local options = {
   backup = false,
-  clipboard = "unnamedplus",
   cmdheight = 2,
   completeopt = { "menuone", "noselect" },
   conceallevel = 0,
