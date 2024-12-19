@@ -12,8 +12,6 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>lf', function() vim.lsp.buf.format { async = true } end, bufopts)
 end 
 
-require 'lspconfig'.tsserver.setup{ on_attach = on_attach }
-
 
 require("user.lsp.mason")
 require("user.lsp.handlers").setup()
