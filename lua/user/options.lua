@@ -42,7 +42,20 @@ local options = {
   foldcolumn = "1",
   foldlevel = 99,
   foldlevelstart = -1,
-  foldenable = true
+  foldenable = true,
+  clipboard = "unnamedplus"
+}
+
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
 }
 
 vim.opt.shortmess:append "c"

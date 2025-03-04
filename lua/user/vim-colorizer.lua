@@ -8,7 +8,7 @@ colorizer.setup({
   user_default_options = {
     RGB = true, -- #RGB hex codes
     RRGGBB = true, -- #RRGGBB hex codes
-    names = true, -- "Name" codes like Blue or blue
+    names = false, -- "Name" codes like Blue or blue
     RRGGBBAA = true, -- #RRGGBBAA hex codes
     AARRGGBB = false, -- 0xAARRGGBB hex codes
     rgb_fn = false, -- CSS rgb() and rgba() functions
@@ -19,7 +19,7 @@ colorizer.setup({
     mode = "virtualtext", -- Set the display mode.
     -- Available methods are false / true / "normal" / "lsp" / "both"
     -- True is same as normal
-    tailwind = false, -- Enable tailwind colors
+    tailwind = true, -- Enable tailwind colors
     -- parsers can contain values used in |user_default_options|
     sass = { enable = true, parsers = { "css" }, }, -- Enable sass colors
     virtualtext = "■",
