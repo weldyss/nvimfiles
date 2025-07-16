@@ -64,7 +64,6 @@ return packer.startup(function(use)
   use "David-Kunz/cmp-npm"
   use ({'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }})
   use 'NvChad/nvim-colorizer.lua'
-  use 'github/copilot.vim'
 
   -- Tree
   use {
@@ -87,6 +86,7 @@ return packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
 
   use "github/copilot.vim"
+  use 'joshuavial/aider.nvim'
 
   use('MunifTanjim/prettier.nvim')
   use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }})

@@ -42,3 +42,4 @@ luac.out
 # Pluginspacker_compiled
 
 **/packer_compiled.lua
+.aider*
