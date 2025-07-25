@@ -87,7 +87,6 @@ return packer.startup(function(use)
 
   use "github/copilot.vim"
   use 'vim-denops/denops.vim'
-  use 'nekowasabi/aider.vim'
   use ({ "nekowasabi/aider.vim"
   , dependencies = "vim-denops/denops.vim"
   , config = function()
