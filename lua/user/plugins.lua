@@ -86,7 +86,37 @@ return packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
 
   use "github/copilot.vim"
-  use 'joshuavial/aider.nvim'
+  use 'vim-denops/denops.vim'
+  use 'nekowasabi/aider.vim'
+  use ({ "nekowasabi/aider.vim"
+  , dependencies = "vim-denops/denops.vim"
+  , config = function()
+    vim.g.aider_command = 'aider --no-auto-commits'
+    vim.g.aider_buffer_open_type = 'floating'
+    vim.g.aider_floatwin_width = 100
+    vim.g.aider_floatwin_height = 20
+
+    vim.api.nvim_create_autocmd('User',
+      {
+        pattern = 'AiderOpen',
+        callback =
+            function(args)
+              vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { buffer = args.buf })
+              vim.keymap.set('n', '<Esc>', '<cmd>AiderHide<CR>', { buffer = args.buf })
+            end
+      })
+    vim.api.nvim_set_keymap('n', '<C>at', ':AiderRun<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<C>aa', ':AiderAddCurrentFile<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<C>ar', ':AiderAddCurrentFileReadOnly<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<C>aw', ':AiderAddWeb<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<C>ax', ':AiderExit<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<C>ai', ':AiderAddIgnoreCurrentFile<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<C>aI', ':AiderOpenIgnore<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<C>aI', ':AiderPaste<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<C>ah', ':AiderHide<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('v', '<C>av', ':AiderVisualTextWithPrompt<CR>', { noremap = true, silent = true })
+  end
+  })
 
   use('MunifTanjim/prettier.nvim')
   use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }})
