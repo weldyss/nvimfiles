@@ -1,5 +1,5 @@
 vim.lsp.config.rubocop = {
-  cmd = { 'rubocop', '--lsp' },
+  cmd = { "bundle", "exec", "rubocop", "--lsp" },
   root_markers = { 'Gemfile', '.git' },
   filetypes = { 'ruby' },
 }
