@@ -37,6 +37,13 @@ M.setup = function()
   }
 
   vim.diagnostic.config(config)
+
+  -- Force diagnostic refresh after saving so stale errors clear immediately
+  vim.api.nvim_create_autocmd("BufWritePost", {
+    callback = function()
+      vim.diagnostic.reset(nil, vim.api.nvim_get_current_buf())
+    end,
+  })
 end
 
 -- Here we set up keymaps. You can change them if you already have specifics for these functions, or just want to try another keymap.

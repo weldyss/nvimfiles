@@ -3,3 +3,10 @@ vim.lsp.enable("html")
 vim.lsp.enable("cssls")
 -- needed to install node package call "stimulus-language-server"
 vim.lsp.enable("stimulus_ls")
+
+vim.lsp.config.stimulus_ls = {
+  cmd = { "stimulus-ls", "--stdio" },
+  filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "html", "erb" },
+  root_markers = { "package.json", ".git", "Gemfile" },
+  settings = {},
+}

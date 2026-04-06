@@ -18,5 +18,6 @@ require "user.auto-tag"
 require "user.octo"
 require "user.vim-colorizer"
 require "user.trouble"
+require "user.copilot"
 
 require "user.lsp"

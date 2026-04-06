@@ -87,35 +87,6 @@ return packer.startup(function(use)
 
   use "github/copilot.vim"
   use 'vim-denops/denops.vim'
-  use ({ "nekowasabi/aider.vim"
-  , dependencies = "vim-denops/denops.vim"
-  , config = function()
-    vim.g.aider_command = 'aider --no-auto-commits'
-    vim.g.aider_buffer_open_type = 'floating'
-    vim.g.aider_floatwin_width = 100
-    vim.g.aider_floatwin_height = 20
-
-    vim.api.nvim_create_autocmd('User',
-      {
-        pattern = 'AiderOpen',
-        callback =
-            function(args)
-              vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { buffer = args.buf })
-              vim.keymap.set('n', '<Esc>', '<cmd>AiderHide<CR>', { buffer = args.buf })
-            end
-      })
-    vim.api.nvim_set_keymap('n', '<C>at', ':AiderRun<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<C>aa', ':AiderAddCurrentFile<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<C>ar', ':AiderAddCurrentFileReadOnly<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<C>aw', ':AiderAddWeb<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<C>ax', ':AiderExit<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<C>ai', ':AiderAddIgnoreCurrentFile<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<C>aI', ':AiderOpenIgnore<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<C>aI', ':AiderPaste<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<C>ah', ':AiderHide<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('v', '<C>av', ':AiderVisualTextWithPrompt<CR>', { noremap = true, silent = true })
-  end
-  })
 
   use('MunifTanjim/prettier.nvim')
   use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }})
@@ -147,6 +118,48 @@ return packer.startup(function(use)
       vim.o.timeoutlen = 300
     end
   }
+
+  -- O assistente de IA: CodeCompanion
+  use({
+    "olimorris/codecompanion.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim", -- Opcional
+      "stevearc/dressing.nvim"         -- Opcional, para UI mais bonita
+    },
+    config = function()
+      require("codecompanion").setup({
+        adapters = {
+          ollama = function()
+            return require("codecompanion.adapters").extend("ollama", {
+              env = {
+                url = "https://api-ai.wphome.com.br", -- O domínio protegido
+              },
+              headers = {
+                -- A chave de acesso que geramos no terminal do Mac
+                Authorization = "d3N0ZWNoOiQlV2NzMDEwODMxbXY=",
+              },
+              schema = {
+                model = {
+                  default = "qwen2.5-coder:7b", -- O modelo especialista
+                },
+              },
+            })
+          end,
+        },
+        strategies = {
+          chat = { adapter = "ollama" },
+          inline = { adapter = "ollama" },
+          agent = { adapter = "ollama" },
+        },
+      })
+      
+      -- Atalhos de teclado práticos
+      vim.keymap.set({"n", "v"}, "<LocalLeader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+      vim.keymap.set({"n", "v"}, "<LocalLeader>i", "<cmd>CodeCompanion<cr>", { noremap = true, silent = true })
+    end
+  })
 
   use({
     "lmburns/lf.nvim",
