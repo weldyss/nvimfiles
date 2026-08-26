@@ -101,6 +101,7 @@ return packer.startup(function(use)
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master", -- nvim-ts-rainbow/playground require the legacy configs.lua API removed on main
     run = ":TSUpdate"
   }
   use "p00f/nvim-ts-rainbow"
@@ -124,7 +125,7 @@ return packer.startup(function(use)
     "olimorris/codecompanion.nvim",
     requires = {
       "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
+      { "nvim-treesitter/nvim-treesitter", branch = "master" },
       "nvim-telescope/telescope.nvim", -- Opcional
       "stevearc/dressing.nvim"         -- Opcional, para UI mais bonita
     },

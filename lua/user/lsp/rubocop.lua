@@ -6,28 +6,9 @@ vim.lsp.config.rubocop = {
 
 vim.lsp.enable("rubocop")
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-
-    if client:supports_method("textDocument/formatting") then
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        buffer = ev.buf,
-        callback = function()
-          vim.lsp.buf.format({
-            filter = function(c)
-              return c.name == "rubocop"
-            end,
-            bufnr = ev.buf,
-          })
-        end,
-      })
-    end
-
-    if client:supports_method("textDocument/completion") then
-      vim.lsp.completion. enable(true, client.id, ev.buf, { autotrigger = true }) end
-    end
-})
+-- NOTE: keymaps, format-on-save and completion for this client are wired up
+-- generically for any LSP client in user.lsp.servers (LspAttach autocmd),
+-- so this file only needs to declare/enable the server itself.
 
 vim.cmd("set completeopt+=noselect")
 
