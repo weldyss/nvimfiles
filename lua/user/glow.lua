@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 glow.setup {
-  glow_path = "/opt/homebrew/bin/glow", -- filled automatically with your glow bin in $PATH,
+  glow_path = vim.fn.exepath("glow"), -- auto-detected from $PATH, works on any OS/install location
   glow_install_path = "~/.local/bin", -- default path for installing glow binary
   border = "shadow", -- floating window border config
   style = "dark", -- filled automatically with your current editor background, you can override using glow json style

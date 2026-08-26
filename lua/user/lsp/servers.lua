@@ -1,8 +1,12 @@
 -- Common general-purpose LSP servers, wired up via Neovim's native
 -- vim.lsp.enable/vim.lsp.config API (same approach as rubocop.lua/html.lua),
 -- using the default server configs shipped by nvim-lspconfig.
+--
+-- All binaries below (lua-language-server, pyright, ts_ls, gopls) can be
+-- installed on both macOS and Fedora Linux by running:
+--   bash ~/.config/nvim/scripts/install-deps.sh
 
--- needed to install "lua-language-server" (brew install lua-language-server)
+-- needed to install "lua-language-server" (see scripts/install-deps.sh)
 vim.lsp.config.lua_ls = {
   settings = {
     Lua = {
