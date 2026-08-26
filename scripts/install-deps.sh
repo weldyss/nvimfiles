@@ -4,6 +4,8 @@
 #   - LSP servers: lua_ls, pyright, ts_ls (typescript-language-server), gopls
 #   - CLI tools used by plugins: ripgrep (telescope), fd, lazygit, glow
 #   - Build tools needed by nvim-treesitter to compile parsers
+#   - Neovim remote plugin providers: pynvim (Python), neovim (npm), neovim (gem)
+#   - deno (required by vim-denops/denops.vim)
 #
 # Works on macOS (Homebrew) and Fedora Linux (dnf). Safe to re-run any time
 # (every step is idempotent / skips already-installed tools).
@@ -108,4 +110,39 @@ else
   echo "go not found - skipping gopls install" >&2
 fi
 
-log "Done. Verify with: nvim --headless -c 'qa!' and opening a .lua/.py/.js/.go file to confirm LSP clients attach."
+# ---------------------------------------------------------------------------
+# 5. Neovim remote plugin providers (:checkhealth provider)
+# ---------------------------------------------------------------------------
+# These are NOT LSP servers - they're what Neovim itself needs to run
+# Python/Node/Ruby "remote plugins" (used by some plugins under the hood).
+# Without them, `:checkhealth provider` shows warnings on every fresh install.
+
+if have python3; then
+  log "Installing pynvim (Python 3 provider)"
+  python3 -m pip install --upgrade pynvim
+else
+  echo "python3 not found - skipping pynvim install" >&2
+fi
+
+if have npm; then
+  log "Installing neovim npm package (Node.js provider)"
+  npm install -g neovim
+fi
+
+if have gem; then
+  log "Installing neovim gem (Ruby provider)"
+  gem list -i '^neovim$' >/dev/null 2>&1 || gem install neovim
+fi
+
+# ---------------------------------------------------------------------------
+# 6. Deno (required by vim-denops/denops.vim)
+# ---------------------------------------------------------------------------
+# Installed as a global npm package here for portability - it's just a thin
+# installer that fetches the real deno binary, works identically on both OSes.
+
+if ! have deno && have npm; then
+  log "Installing deno (required by denops.vim)"
+  npm install -g deno
+fi
+
+log "Done. Verify with: nvim --headless -c 'checkhealth provider' -c 'w! /tmp/health.txt' -c 'qa!' && cat /tmp/health.txt"

@@ -16,6 +16,9 @@ platforms:
 - LSP servers: `lua_ls`, `pyright`, `ts_ls` (typescript-language-server), `gopls`
 - CLI tools used by plugins: `ripgrep`/`fd` (telescope), `lazygit`, `glow`
 - Build tools required by `nvim-treesitter` to compile parsers (`gcc`, `make`)
+- Neovim remote plugin providers (`:checkhealth provider`): `pynvim` (Python),
+  `neovim` npm package (Node.js), `neovim` gem (Ruby)
+- `deno`, required by the `vim-denops/denops.vim` plugin
 
 It's safe to re-run any time — every step skips already-installed tools.
 
